@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/MultipleDataTemplate/.vs/MultipleDataTemplate
+/MultipleDataTemplate/MultipleDataTemplate/obj
+/MultipleDataTemplate/MultipleDataTemplate/bin/x86/Debug

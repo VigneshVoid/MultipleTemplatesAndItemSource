@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="MultipleDataTemplate.Cars"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    
+    xmlns:controls="using:MultipleDataTemplate">
+    <Page.Resources>
+        <DataTemplate x:Key="CarKey" x:DataType="controls:Car">
+            <StackPanel Padding="0,12">
+                <TextBlock Text="{x:Bind Make}"></TextBlock>
+                <TextBlock Text="{x:Bind Model}"></TextBlock>
+
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="BikeKey" x:DataType="controls:Employee">
+            <StackPanel Padding="0,12"> 
+                <TextBlock Text="{x:Bind Name}"></TextBlock>
+                <TextBlock Text="{x:Bind EmpID}"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+    <StackPanel Padding="32">
+        <TextBlock Margin="0,0,0,20" Foreground="{ThemeResource SystemAccentColorDark1}" FontWeight="SemiBold" FontSize="20" Text="Binding Multiple Data Templates having different datatypes to ListView which has variable ItemSource - Sample App"></TextBlock>
+        <controls:DataList ItemsSource="{x:Bind ItemSource,Mode=OneWay}" ItemTemplate="{x:Bind ItemTemplate,Mode=OneWay}"></controls:DataList>
+        <StackPanel Orientation="Horizontal" Padding="0,20">
+            <Button Padding="12,6" Style="{StaticResource AccentButtonStyle}" Content="Cars List" Click="CarsClick"/>
+            <Button Padding="12,6" Style="{StaticResource AccentButtonStyle}" Content="Employees List" Click="BikeClick" Margin="20,0"/>
+        </StackPanel>
+    </StackPanel>
+</Page>
